@@ -27,6 +27,7 @@ func (collection {{ .PluralType }}) Contains(element {{ .Type }}) bool {
 	return false
 }`
 
+// TODO - drop all in n > length
 const dropFuncTemplate = `// Drop returns a slice without first n elements
 func (collection {{ .PluralType }}) Drop(n int) {{ .PluralType }} {
 	length := len(collection)
@@ -63,6 +64,7 @@ func (collection {{ .PluralType }}) Map(f func(item {{ .Type }}) interface{}) []
 	return result
 }`
 
+// TODO - take all if n > length
 const takeFuncTemplate = `// Take returns first n elements of the slice
 func (collection {{ .PluralType }}) Take(n int) {{ .PluralType }} {
 	return collection[:n]
