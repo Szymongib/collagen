@@ -99,7 +99,7 @@ func TestDoggos_Drop(t *testing.T) {
 		{
 			description: "drop all if dropping more doggos than exists",
 			doggos:      testDoggos,
-			toDrop:      len(testDoggos) + 2,
+			toDrop:      len(testDoggos) + 1,
 			result:      Doggos{},
 		},
 	} {
@@ -222,7 +222,7 @@ func TestDoggos_Take(t *testing.T) {
 		{
 			description: "take all all doggos if take more than exists",
 			doggos:      testDoggos,
-			toTake:      len(testDoggos) + 2,
+			toTake:      len(testDoggos) + 1,
 			result:      testDoggos,
 		},
 	} {
