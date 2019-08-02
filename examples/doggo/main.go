@@ -8,8 +8,31 @@ import (
 func main() {
 
 	doggos := Doggos{
-		{Name: "Fluffy", BirthDate: time.Now().Unix(), Height: 120},
-		{Name: "Max", BirthDate: time.Now().Unix(), Height: 20},
+		{
+			Name:      "Fluffy",
+			BirthDate: time.Date(2012, 1, 1, 0, 0, 0, 0, time.Local).Unix(),
+			Height:    25,
+		},
+		{
+			Name:      "Occy",
+			BirthDate: time.Date(2016, 1, 1, 0, 0, 0, 0, time.Local).Unix(),
+			Height:    102,
+		},
+		{
+			Name:      "Boo",
+			BirthDate: time.Date(2013, 1, 1, 0, 0, 0, 0, time.Local).Unix(),
+			Height:    49,
+		},
+		{
+			Name:      "Poo",
+			BirthDate: time.Date(2009, 1, 1, 0, 0, 0, 0, time.Local).Unix(),
+			Height:    17,
+		},
+		{
+			Name:      "Rex",
+			BirthDate: time.Date(2015, 1, 1, 0, 0, 0, 0, time.Local).Unix(),
+			Height:    86,
+		},
 	}
 
 	fmt.Println("Doggos:")
@@ -17,40 +40,20 @@ func main() {
 		fmt.Println(d)
 	}
 
-	fmt.Println("Long doggos:")
+	fmt.Println("Doggos higher than 50:")
 	for _, d := range doggos.Filter(func(item Doggo) bool {
 		return item.Height > 50
 	}) {
 		fmt.Println(d)
 	}
 
-	fmt.Println("Max exist: ", doggos.Exist(func(element Doggo) bool {
-		return element.Name == "Max"
+	fmt.Println("Is there Doggo named Rex?")
+	fmt.Println(doggos.Exist(func(element Doggo) bool {
+		return element.Name == "Rex"
 	}))
 
-	slicedDoggos := doggos.ToSlice()
-
-	fmt.Print(slicedDoggos)
-
+	fmt.Println("Doggos names: ")
 	fmt.Println(doggos.Map(func(item Doggo) interface{} {
 		return item.Name
 	}))
 }
-
-//func LargeDoggos(doggos Doggos) Doggos {
-//	return doggos.Filter(func(d Doggo) bool {
-//		return d.Height >= 50
-//	})
-//}
-
-func LargeDoggos(doggos Doggos) Doggos {
-	return doggos.Filter(func(d Doggo) bool {
-		return d.Height >= 50
-	})
-}
-
-// TODO - several commands like doggos exist? doggos older than etc.
-
-//func loadDoggos() Doggos {
-//
-//}
