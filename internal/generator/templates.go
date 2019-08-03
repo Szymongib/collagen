@@ -27,7 +27,6 @@ func (collection {{ .PluralType }}) Contains(element {{ .Type }}) bool {
 	return false
 }`
 
-// TODO - drop all in n > length
 const dropFuncTemplate = `// Drop returns a slice without first n elements
 func (collection {{ .PluralType }}) Drop(n int) {{ .PluralType }} {
 	length := len(collection)
