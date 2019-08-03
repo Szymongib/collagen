@@ -93,6 +93,10 @@ func (collection Tests) Contains(element Test) bool {
 // Drop returns a slice without first n elements
 func (collection Tests) Drop(n int) Tests {
 	length := len(collection)
+
+	if n > length {
+		return Tests{}
+	}
 	return collection[:length-n]
 }
 `
@@ -135,6 +139,9 @@ func (collection Tests) Map(f func(item Test) interface{}) []interface{} {
 	renderedTakeFunc = `
 // Take returns first n elements of the slice
 func (collection Tests) Take(n int) Tests {
+	if n > len(collection) {
+		return collection
+	}
 	return collection[:n]
 }
 `

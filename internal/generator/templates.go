@@ -30,6 +30,10 @@ func (collection {{ .PluralType }}) Contains(element {{ .Type }}) bool {
 const dropFuncTemplate = `// Drop returns a slice without first n elements
 func (collection {{ .PluralType }}) Drop(n int) {{ .PluralType }} {
 	length := len(collection)
+
+	if n > length {
+		return {{ .PluralType }}{}
+	}
 	return collection[:length-n]
 }`
 
@@ -65,5 +69,8 @@ func (collection {{ .PluralType }}) Map(f func(item {{ .Type }}) interface{}) []
 
 const takeFuncTemplate = `// Take returns first n elements of the slice
 func (collection {{ .PluralType }}) Take(n int) {{ .PluralType }} {
+	if n > len(collection) {
+		return collection
+	}
 	return collection[:n]
 }`

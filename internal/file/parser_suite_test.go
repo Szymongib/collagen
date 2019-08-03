@@ -61,6 +61,13 @@ type Paw struct {
 }
 `)
 
+	fileWithTestsContent = []byte(`package valid_test
+
+func TestDog(t *testing.T){
+
+}
+`)
+
 	fileContentWithoutStruct = []byte(`package valid
 
 func Bark() string {
@@ -91,6 +98,12 @@ func setupValidTestData(testDataDir string) error {
 
 	fileWithoutStruct := filepath.Join(validDataDir, "file_without_struct.go")
 	err = ioutil.WriteFile(fileWithoutStruct, fileContentWithoutStruct, os.ModePerm)
+	if err != nil {
+		return err
+	}
+
+	testFile := filepath.Join(validDataDir, "file_without_struct_test.go")
+	err = ioutil.WriteFile(testFile, fileWithTestsContent, os.ModePerm)
 	if err != nil {
 		return err
 	}
