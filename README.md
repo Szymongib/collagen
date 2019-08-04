@@ -1,5 +1,7 @@
 # Go Collagen
 
+[![Build Status](https://travis-ci.org/Szymongib/go-collagen.svg?branch=master)](https://travis-ci.org/Szymongib/go-collagen)
+
 Collagen generates methods to operate on collection for a specific type.
 
 ## Usage
