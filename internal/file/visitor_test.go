@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/Szymongib/go-collagen/internal/generator"
+	"github.com/Szymongib/collagen/internal/generator"
 )
 
 func TestNodeVisitor_Visit(t *testing.T) {

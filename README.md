@@ -1,8 +1,15 @@
 # Go Collagen
 
-[![Build Status](https://travis-ci.org/Szymongib/go-collagen.svg?branch=master)](https://travis-ci.org/Szymongib/go-collagen)
+[![Build Status](https://travis-ci.org/Szymongib/collagen.svg?branch=master)](https://travis-ci.org/Szymongib/collagen)
 
 Collagen generates methods to operate on collection for a specific type.
+
+## Installation
+
+You can install Collagen using `go get`:
+```
+go get github.com/Szymongib/collagen
+```
 
 ## Usage
 
@@ -43,6 +50,27 @@ To specify the name of the collection type, use the `--plural` option:
 ```
 collagen --name Friend --plural FriendCollection
 ```
+
+Now you can use generated methods directly on the collection type:
+```go
+friends := FriendCollection{
+	{Name: "Jon", Age: 21},
+	{Name: "James", Age: 44},
+	{Name: "Jaine", Age: 25},
+}
+
+friendsBelowThirty := friends.Filter(func(f Friend) bool {
+	return f.Age < 30
+})
+
+hasFriendOlderThanForty := friends.Exists(func(f Friend) bool {
+	return f.Age > 40
+})
+
+var sliceOfFriends []Friend = friends.ToSlice()
+```
+
+To checkout more, see the [examples](examples/README.md).
 
 ## Collection methods
 

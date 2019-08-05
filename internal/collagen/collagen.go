@@ -4,7 +4,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/Szymongib/go-collagen/internal/generator"
+	"github.com/Szymongib/collagen/internal/generator"
 )
 
 type Config struct {

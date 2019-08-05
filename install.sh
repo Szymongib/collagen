@@ -12,7 +12,7 @@ go test ${DIR}/internal/... ${DIR}/cmd/...
 echo "Testing done"
 
 echo "Installing..."
-go install ${DIR}/cmd/collagen
+go install ${DIR}
 echo "Installation finished"
 
 echo "Generating code in examples..."

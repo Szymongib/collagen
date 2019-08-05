@@ -1,11 +1,11 @@
-package main
+package collagen
 
 import (
 	"flag"
 	"os"
 	"strings"
 
-	"github.com/Szymongib/go-collagen/internal/collagen"
+	"github.com/Szymongib/collagen/internal/collagen"
 
 	"github.com/pkg/errors"
 )
