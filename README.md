@@ -1,4 +1,4 @@
-# Go Collagen
+# Collagen
 
 [![Build Status](https://travis-ci.org/Szymongib/collagen.svg?branch=master)](https://travis-ci.org/Szymongib/collagen)
 
