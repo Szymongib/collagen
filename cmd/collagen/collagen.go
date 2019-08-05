@@ -1,11 +1,11 @@
-package main
+package collagen
 
 import (
 	"fmt"
 	"os"
 
-	"github.com/Szymongib/go-collagen/internal/collagen"
-	"github.com/Szymongib/go-collagen/internal/file"
+	"github.com/Szymongib/collagen/internal/collagen"
+	"github.com/Szymongib/collagen/internal/file"
 )
 
 type flagConfig struct {
@@ -16,7 +16,7 @@ type flagConfig struct {
 	functions string
 }
 
-func main() {
+func Collagen() {
 	flagConfig := parseFlagConfig()
 
 	if err := validateFlagConfig(flagConfig); err != nil {

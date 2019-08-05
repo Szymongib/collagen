@@ -1,4 +1,4 @@
-package main
+package collagen
 
 import (
 	"os"
@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/Szymongib/go-collagen/internal/collagen"
+	"github.com/Szymongib/collagen/internal/collagen"
 
 	"github.com/stretchr/testify/assert"
 )

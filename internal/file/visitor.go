@@ -4,7 +4,7 @@ import (
 	"go/ast"
 	"go/token"
 
-	"github.com/Szymongib/go-collagen/internal/generator"
+	"github.com/Szymongib/collagen/internal/generator"
 )
 
 type NodeVisitor struct {

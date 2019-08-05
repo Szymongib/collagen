@@ -8,9 +8,9 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/Szymongib/go-collagen/internal/collagen/mocks"
+	"github.com/Szymongib/collagen/internal/collagen/mocks"
 
-	"github.com/Szymongib/go-collagen/internal/generator"
+	"github.com/Szymongib/collagen/internal/generator"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

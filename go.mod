@@ -1,4 +1,4 @@
-module github.com/Szymongib/go-collagen
+module github.com/Szymongib/collagen
 
 go 1.12
 
