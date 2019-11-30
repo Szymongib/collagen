@@ -14,6 +14,7 @@ type flagConfig struct {
 	dir       string
 	outDir    string
 	functions string
+	pointer   bool
 }
 
 func Collagen() {

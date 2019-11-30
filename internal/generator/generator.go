@@ -36,9 +36,13 @@ var functionTemplates = map[string]string{
 	takeFunc:     takeFuncTemplate,
 }
 
-func GenerateCollectionMethods(struc Struct, functions []string) (string, error) {
+func GenerateCollectionMethods(struc Struct, functions []string, usePointers bool) (string, error) {
 	if len(functions) == 0 {
 		functions = supportedFunctions
+	}
+
+	if usePointers {
+		struc.Type = fmt.Sprintf("*%s", struc.Type)
 	}
 
 	var generatedFunctions = map[string]string{}

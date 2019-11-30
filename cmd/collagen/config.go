@@ -15,6 +15,7 @@ func parseFlagConfig() flagConfig {
 	plural := flag.String("plural", "", "Name of the plural type alias.")
 	dir := flag.String("dir", "", "Source directory of the struct location.")
 	functions := flag.String("functions", "", "Coma separated list of functions to generate. If empty all functions will be generated.")
+	pointer := flag.Bool("pointer", false, "Specifies if methods should be generated fo array of pointers")
 	//outDir := flag.String("outDir", "", "Output directory.") // TODO: not yet supported.
 
 	flag.Parse()
@@ -25,6 +26,7 @@ func parseFlagConfig() flagConfig {
 		dir:       *dir,
 		outDir:    "",
 		functions: *functions,
+		pointer:   *pointer,
 	}
 }
 
@@ -68,5 +70,6 @@ func prepareConfig(flagConfig flagConfig) (collagen.Config, error) {
 		Path:       path,
 		OutputDir:  outDir,
 		Functions:  functions,
+		Pointer:    flagConfig.pointer,
 	}, nil
 }

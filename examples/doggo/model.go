@@ -5,6 +5,7 @@ import (
 	"time"
 )
 
+//go:generate collagen --name Doggo --plural DoggoPointers --pointer
 //go:generate collagen --name Doggo
 type Doggo struct {
 	Name      string

@@ -14,6 +14,7 @@ type Config struct {
 	// OutDir is not yet supported
 	OutputDir string
 	Functions []string
+	Pointer   bool
 }
 
 //go:generate mockery -name Parser
@@ -29,7 +30,7 @@ func Generate(config Config, parser Parser) error {
 
 	structure.PluralType = config.PluralName
 
-	content, err := generator.GenerateCollectionMethods(structure, config.Functions)
+	content, err := generator.GenerateCollectionMethods(structure, config.Functions, config.Pointer)
 	if err != nil {
 		return err
 	}

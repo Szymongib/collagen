@@ -35,6 +35,16 @@ var testDoggos = Doggos{
 	},
 }
 
+func doggosToPointers(doggos Doggos) DoggoPointers {
+	doggosPoiners := make([]*Doggo, len(doggos))
+
+	for i, doggo := range doggos {
+		doggosPoiners[i] = &doggo
+	}
+
+	return doggosPoiners
+}
+
 func TestDoggos_Contains(t *testing.T) {
 
 	newDoggo := Doggo{

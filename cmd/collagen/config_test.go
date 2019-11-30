@@ -80,6 +80,21 @@ func Test_prepareConfig(t *testing.T) {
 				Functions:  []string{"Filter", "Contains"},
 			},
 		},
+		{
+			description: "with pointers",
+			flagConfig: flagConfig{
+				name:    "Dog",
+				pointer: true,
+			},
+			expectedConfig: collagen.Config{
+				StructName: "Dog",
+				PluralName: "Dogs",
+				Path:       executionDir,
+				OutputDir:  executionDir,
+				Functions:  nil,
+				Pointer:    true,
+			},
+		},
 	} {
 		t.Run("should prepare config when "+testCase.description, func(t *testing.T) {
 			// when
